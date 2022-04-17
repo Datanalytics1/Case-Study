@@ -1,4 +1,4 @@
-# **Case-Study Data Analysis 
+# Case-Study Data Analysis 
 
 ![smartwatch](https://user-images.githubusercontent.com/103891809/163721535-8a9e8fb4-06e6-49e0-8ec8-4f510d2c8262.jpg)
 
