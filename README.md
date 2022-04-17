@@ -96,6 +96,33 @@ head(dailyActivity_merged)
 | 1503960366 |  4/15/2016    |   9762       |   6.28         |   6.28          |
 | 1503960366 |  4/16/2016    |  12669       |   8.16         |   8.16          |
 | 1503960366 |  4/17/2016    |   9705       |   6.48         |   6.48          |
+
+| LoggedActivitiesDistance | VeryActiveDistance | ModeratelyActiveDistance |
+| :--                      | :---               | :---                     |
+| 0                        | 1.88               | 0.55                     |
+| 0                        | 1.57               | 0.69                     |
+| 0                        | 2.44               | 0.40                     |
+| 0                        | 2.14               | 1.26                     |
+| 0                        | 2.71               | 0.41                     |
+| 0                        | 3.19               | 0.78                     |
+
+| LightActiveDistance | SedentaryActiveDistance | VeryActiveMinutes |
+| :---                | :---                    | :---              |
+| 6.06                | 0                       | 25                |
+| 4.71                | 0                       | 21                |
+| 3.91                | 0                       | 30                |
+| 2.83                | 0                       | 29                |
+| 5.04                | 0                       | 36                |
+| 2.51                | 0                       | 38                |
+
+| FairlyActiveMinutes | LightlyActiveMinutes | SedentaryMinutes | Calories |
+| :---                | :---                 | :---             | :---     |
+| 13                  | 328                  | 728              | 1985     |
+| 19                  | 217                  | 776              | 1797     |
+| 11                  | 181                  | 1218             | 1776     |
+| 34                  | 209                  | 726              | 1745     |
+| 10                  | 221                  | 773              | 1863     |
+| 20                  | 164                  | 539              | 1728     |
   
   
   
