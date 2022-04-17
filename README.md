@@ -123,6 +123,39 @@ head(dailyActivity_merged)
 | 34                  | 209                  | 726              | 1745     |
 | 10                  | 221                  | 773              | 1863     |
 | 20                  | 164                  | 539              | 1728     |
+
+colnames(daily_activity)
+
+| [1] "Id"                       | "ActivityDate"              |
+| :---                           | :---                        |
+| [3] "TotalSteps"               | "TotalDistance"             |           
+| [5] "TrackerDistance"          | "LoggedActivitiesDistance"  |
+| [7] "VeryActiveDistance"       | "ModeratelyActiveDistance"  |
+| [9] "LightActiveDistance"      | "SedentaryActiveDistance"   | 
+| [11] "VeryActiveMinutes"       | "FairlyActiveMinutes"       |     
+| [13] "LightlyActiveMinutes"    | "SedentaryMinutes"          | 
+| [15] "Calories"
+
+glimpse(daily_activity)
+
+| Rows: 940
+| Columns: 15
+| $ Id                       | <dbl> | 1503960366 | 1503960366 | 1503960366 | 150396036~ |
+| :--                        | :---  | :---        | :---        | :---    | :---        |
+| $ ActivityDate             | <chr> | "4/12/2016" | "4/13/2016" | "4/14/2016" | "4/15/~ |
+| $ TotalSteps               | <int> | 13162, 10735 | 10460, 9762 | 12669 | 9705, 13019~ |
+| $ TotalDistance            | <dbl> | 8.50, 6.97 | 6.74, 6.2 | 8.16, 6.48 | 8.59 | 9.8~ |
+| $ TrackerDistance          | <dbl> | 8.50, 6.97 | 6.74, 6.28 | 8.16, 6.48 | 8.59, 9.8~ |
+| $ LoggedActivitiesDistance | <dbl> | 0, 0, 0, 0 | 0, 0, 0, 0 | 0, 0, 0 | 0, 0, 0, 0, ~ |
+| $ VeryActiveDistance       | <dbl> | 1.88, 1.57, 2.44, 2.14, 2.71, 3.19, 3.25, 3.5~
+| $ ModeratelyActiveDistance | <dbl> | 0.55, 0.69, 0.40, 1.26, 0.41, 0.78, 0.64, 1.3~
+| $ LightActiveDistance      | <dbl> | 6.06, 4.71, 3.91, 2.83, 5.04, 2.51, 4.71, 5.0~
+| $ SedentaryActiveDistance  | <dbl> | 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+| $ VeryActiveMinutes        | <int> | 25, 21, 30, 29, 36, 38, 42, 50, 28, 19, 66, 4~
+| $ FairlyActiveMinutes      | <int> | 13, 19, 11, 34, 10, 20, 16, 31, 12, 8, 27, 21~
+| $ LightlyActiveMinutes     | <int> | 328, 217, 181, 209, 221, 164, 233, 264, 205, ~
+| $ SedentaryMinutes         | <int> | 728, 776, 1218, 726, 773, 539, 1149, 775, 818~
+| $ Calories                 | <int> | 1985, 1797, 1776, 1745, 1863, 1728, 1921, 203~
   
   
   
