@@ -1,2 +1,21 @@
-##Data Analysis Case Study
+# Data Analysis Case Study
+
+# Load the packages
+
+### I will be using tidyverse packages as well as the skimr, and janitor for this project. We are also using using the sqldf package, which will allow us to emulate SQlsyntax when looking at data.
+
+# install.packages("sqldf",repos = "http://cran.us.r-project.org")
+
+## package 'sqldf' successfully unpacked and MD5 sums checked
+## 
+## The downloaded binary packages are in
+##  C:\Users\Asus\AppData\Local\Temp\RtmpiOaUyZ\downloaded_packages
+
+
+library(sqldf)
+
+## Loading required package: gsubfn
+## Loading required package: proto
+## Loading required package: RSQLite
+
 
