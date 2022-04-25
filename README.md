@@ -431,7 +431,45 @@ I would like to start with the relationship between steps taken in a da and sede
   
 ggplot(data=daily_activity, aes(x=TotalSteps, y=SedentaryMinutes, color = Calories)) + geom_point()
  
-![smartwatch](./Images/TotalSteps.png)
+![totalsteps](./Images/TotalSteps.png)
+  
+We can see there is a negative relation between total steps and sedentary minutes which is true also because one doesn’t move when he/she is inactive!
+  
+## Strategy-2
+  
+So we can easily market this to consumers by telling them smart-devices could help them start their journey by measuring how much they’re already moving!
+
+The can also know about their sedentary time.
+
+One can note that sedentary time is not necessarily related to calories burned.
+
+Now I will plot the graph between calories and total steps to see the relationship between them.
+  
+ggplot(data=daily_activity, aes(x=TotalSteps, y = Calories))+ geom_point() + stat_smooth(method=lm)
+  
+  `geom_smooth()` using formula 'y ~ x'
+  
+![Calories](./Images/Calories.png)
+  
+We can see people who took the most total steps tend to burn the most calories. But there is a lot of spread in the value.
+
+Now lets look at the residual or the difference between the observed values and the estimated value
+  
+calories.lm <- lm(Calories ~ TotalSteps, data = daily_activity)
+               
+calories.res <- resid(calories.lm)
+
+plot(daily_activity$TotalSteps, calories.res, ylab="Residuals",
+  
+     xlab = "Total Steps", main = "Calories Burned")
+  
+abline(0,0)
+  
+![caloriesburned](./Images/CaloriesBurned.png)
+  
+ 
+
+
 
  
               
