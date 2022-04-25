@@ -389,6 +389,51 @@ daily_activity %>%
 | Mean   : 7638 |  Mean   : 5.490  | Mean   : 991.2      | Mean   : 21.16    |  
 | 3rd Qu.:10727 |  3rd Qu.: 7.713  | 3rd Qu.:1229.5      | 3rd Qu.: 32.00    |  
 | Max.   :36019 |  Max.   :28.030  | Max.   :1440.0      |  Max.   :210.00.  |
+  
+* sleep_day
+  
+sleep_day %>%  
+  select(TotalSleepRecords,
+  TotalMinutesAsleep,
+  TotalTimeInBed) %>%
+  summary()
+  
+| TotalSleepRecords | TotalMinutesAsleep | TotalTimeInBed |
+| :---              | :---               | :---           |
+| Min.   :1.000     |   Min.   : 58.0    |  Min.   : 61.0 | 
+| 1st Qu.:1.000     |   1st Qu.:361.0    |  1st Qu.:403.0 | 
+| Median :1.000     |   Median :433.0    |  Median :463.0 | 
+| Mean   :1.119     |   Mean   :419.5    |  Mean   :458.6 | 
+| 3rd Qu.:1.000     |   3rd Qu.:490.0    |  3rd Qu.:526.0 | 
+| Max.   :3.000     |   Max.   :796.0    |  Max.   :961.0 |
+  
+* weight dataframe
+  
+weight_log %>%  
+  select(WeightPounds,
+  BMI) %>%
+  summary()
+  
+| WeightPounds  |       BMI     |
+| :---          | :---          |
+| Min.   :116.0 |  Min.   :21.45|  
+| 1st Qu.:135.4 |  1st Qu.:23.96| 
+| Median :137.8 |  Median :24.39|  
+| Mean   :158.8 |  Mean   :25.19|  
+| 3rd Qu.:187.5 |  3rd Qu.:25.56|  
+| Max.   :294.3 |  Max.   :47.54|
+  
+## Plotting the explorations
+  
+Just by seeing the heads and a quick summary one can’t see the full trend of the dataframes. So I will plot some graphs to see the relationship properly.
+
+I would like to start with the relationship between steps taken in a da and sedentary(people were inactive) minutes
+  
+ggplot(data=daily_activity, aes(x=TotalSteps, y=SedentaryMinutes, color = Calories)) + geom_point()
+ 
+![smartwatch](./Images/TotalSteps.png)
+
+ 
               
 
   
