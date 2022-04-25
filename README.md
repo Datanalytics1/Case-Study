@@ -1,5 +1,5 @@
 # Case-Study Data Analysis 
-## Matthew Erteza
+## ME
 ### 25/04/2022
 
 ![smartwatch](./Images/smartwatch.jpg)
