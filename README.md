@@ -138,24 +138,138 @@ colnames(daily_activity)
 
 glimpse(daily_activity)
 
-| Rows: 940
-| Columns: 15
-| $ Id                       | <dbl> | 1503960366 | 1503960366 | 1503960366 | 150396036~ |
-| :--                        | :---  | :---        | :---        | :---    | :---        |
-| $ ActivityDate             | <chr> | "4/12/2016" | "4/13/2016" | "4/14/2016" | "4/15/~ |
-| $ TotalSteps               | <int> | 13162, 10735 | 10460, 9762 | 12669 | 9705, 13019~ |
-| $ TotalDistance            | <dbl> | 8.50, 6.97 | 6.74, 6.2 | 8.16, 6.48 | 8.59 | 9.8~ |
-| $ TrackerDistance          | <dbl> | 8.50, 6.97 | 6.74, 6.28 | 8.16, 6.48 | 8.59, 9.8~ |
-| $ LoggedActivitiesDistance | <dbl> | 0, 0, 0, 0 | 0, 0, 0, 0 | 0, 0, 0 | 0, 0, 0, 0, ~ |
-| $ VeryActiveDistance       | <dbl> | 1.88, 1.57, 2.44, 2.14, 2.71, 3.19, 3.25, 3.5~
-| $ ModeratelyActiveDistance | <dbl> | 0.55, 0.69, 0.40, 1.26, 0.41, 0.78, 0.64, 1.3~
-| $ LightActiveDistance      | <dbl> | 6.06, 4.71, 3.91, 2.83, 5.04, 2.51, 4.71, 5.0~
-| $ SedentaryActiveDistance  | <dbl> | 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
-| $ VeryActiveMinutes        | <int> | 25, 21, 30, 29, 36, 38, 42, 50, 28, 19, 66, 4~
-| $ FairlyActiveMinutes      | <int> | 13, 19, 11, 34, 10, 20, 16, 31, 12, 8, 27, 21~
-| $ LightlyActiveMinutes     | <int> | 328, 217, 181, 209, 221, 164, 233, 264, 205, ~
-| $ SedentaryMinutes         | <int> | 728, 776, 1218, 726, 773, 539, 1149, 775, 818~
-| $ Calories                 | <int> | 1985, 1797, 1776, 1745, 1863, 1728, 1921, 203~
+Rows: 940
+Columns: 15
+
+$ Id                       <dbl>  1503960366  1503960366  1503960366 | 150396036~ 
+                    
+$ ActivityDate              <chr>  "4/12/2016"  "4/13/2016"  "4/14/2016"  "4/15/~ 
+  
+$ TotalSteps                <int>  13162, 10735  10460, 9762  12669  9705, 13019~ 
+  
+$ TotalDistance             <dbl>  8.50, 6.97  6.74, 6.2  8.16, 6.48 | 8.59 | 9.8~ 
+  
+$ TrackerDistance           <dbl>  8.50, 6.97 | 6.74, 6.28 | 8.16, 6.48 | 8.59, 9.8~ 
+  
+$ LoggedActivitiesDistance  <dbl>  0, 0, 0, 0 | 0, 0, 0, 0 | 0, 0, 0 | 0, 0, 0, 0, ~ 
+  
+$ VeryActiveDistance        <dbl>  1.88, 1.57, |2.44, 2.14, |2.71, 3.19, 3.25, 3.5~
+  
+$ ModeratelyActiveDistance  <dbl>  0.55, 0.69, 0.40, 1.26, 0.41, 0.78, 0.64, 1.3~
+  
+$ LightActiveDistance       <dbl>  6.06, 4.71, 3.91, 2.83, 5.04, 2.51, 4.71, 5.0~
+  
+$ SedentaryActiveDistance   <dbl>  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+  
+$ VeryActiveMinutes         <int>  25, 21, 30, 29, 36, 38, 42, 50, 28, 19, 66, 4~
+  
+$ FairlyActiveMinutes       <int>  13, 19, 11, 34, 10, 20, 16, 31, 12, 8, 27, 21~
+  
+$ LightlyActiveMinutes      <int>  328, 217, 181, 209, 221, 164, 233, 264, 205, ~
+  
+$ SedentaryMinutes         <int>  728, 776, 1218, 726, 773, 539, 1149, 775, 818~
+  
+$ Calories                 <int>  1985, 1797, 1776, 1745, 1863, 1728, 1921, 203~
+  
+weight_log
+
+## head(weight_log)
+    Id           Date WeightKg WeightPounds Fat   BMI
+1503960366  5/2/2016 11:59:59 PM     52.6     115.9631  22 22.65
+
+1503960366  5/3/2016 11:59:59 PM     52.6     115.9631  NA 22.65
+
+1927972279  4/13/2016 1:08:52 AM    133.5     294.3171  NA 47.54
+
+2873212765 4/21/2016 11:59:59 PM     56.7     125.0021  NA 21.45
+
+2873212765 5/12/2016 11:59:59 PM     57.3     126.3249  NA 21.69
+
+4319703577 4/17/2016 11:59:59 PM     72.4     159.6147  25 27.45
+
+IsManualReport        LogId
+
+True 1.462234e+12
+  
+True 1.462320e+12
+  
+False 1.460510e+12
+  
+True 1.461283e+12
+  
+True 1.463098e+12
+  
+True 1.460938e+12
+  
+colnames(weight_log)
+[1] "Id"             "Date"           "WeightKg"       "WeightPounds"  
+  
+[5] "Fat"            "BMI"            "IsManualReport" "LogId"
+  
+glimpse(weight_log)
+  
+Rows: 67
+
+Columns: 8
+
+$ Id             <dbl> 1503960366, 1503960366, 1927972279, 2873212765, 2873212~
+
+$ Date           <chr> "5/2/2016 11:59:59 PM", "5/3/2016 11:59:59 PM", "4/13/2~
+
+$ WeightKg       <dbl> 52.6, 52.6, 133.5, 56.7, 57.3, 72.4, 72.3, 69.7, 70.3, ~
+
+$ WeightPounds   <dbl> 115.9631, 115.9631, 294.3171, 125.0021, 126.3249, 159.6~
+
+$ Fat            <int> 22, NA, NA, NA, NA, 25, NA, NA, NA, NA, NA, NA, NA, NA,~
+
+$ BMI            <dbl> 22.65, 22.65, 47.54, 21.45, 21.69, 27.45, 27.38, 27.25,~
+
+$ IsManualReport <chr> "True", "True", "False", "True", "True", "True", "True"~
+
+$ LogId          <dbl> 1.462234e+12, 1.462320e+12, 1.460510e+12, 1.461283e+12,~
+  
+## My inference
+After exploring these tables i observed a few things:
+
+* Merging of the data frames is possible because they all have same ‘ID’ fields
+
+* the daily_activity, daily_calories, and daily_intensities have the exact (940) number of observations.
+
+* Lastly the daily_activity table might have a log of calories and intensities already, so we should confirm that the values actually match for any given ‘ID’ number.
+
+To confirm the last point I am running the following codes:
+  
+daily_activity2 <- daily_activity %>%
+  select(Id, ActivityDate, Calories)
+
+head(daily_activity2)
+  
+|   Id     |ActivityDate | Calories |
+| :---     | :---        | :---     |
+|1503960366| 4/12/2016   |  1985    |
+|1503960366| 4/13/2016   |  1797    |
+|1503960366| 4/14/2016   |  1776    |
+|1503960366| 4/15/2016   |  1745    |
+|1503960366| 4/16/2016   |  1863    |
+|1503960366| 4/17/2016   |  1728    |
+  
+sql_check1 <- sqldf('SELECT * FROM daily_activity2 INTERSECT SELECT * FROM daily_calories')
+head(sql_check1)
+             
+|      Id    | ActivityDate | Calories |
+| :---       | :---         | :---     |
+| 1503960366 |  4/12/2016   |  1985    |
+| 1503960366 |  4/13/2016   |  1797    |
+| 1503960366 |  4/14/2016   |  1776    |
+| 1503960366 |  4/15/2016   |  1745    |
+| 1503960366 |  4/16/2016   |  1863    |
+| 1503960366 |   4/17/2016  |   1728   |
+              
+nrow(sql_check1)
+
+[1] 940
+
+
   
   
   
