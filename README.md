@@ -1,10 +1,20 @@
 # Case-Study Data Analysis 
+## Matthew Erteza
+### 25/04/2022
 
 ![smartwatch](./Images/smartwatch.jpg)
 
 ## Scenario
 
 You are a junior data analyst working on the marketing analyst team at Bellabeat, a high-tech manufactures of health-focused products for women. Bellabeat is a sucessful small company, but they have the potenial to become a lager player in the global smart device market. Urška Sršen, cofounder and Chief Creative Officer of Bellabeat, believes that analyzing smart device fitness data could help unlock new growth opportunities for the company. You have been asked to focus on one of Bellabeat’s products and analyze smart device data to gain insight into how consumers are using their smart devices. Sršen asks you to analyze smart device usage data in order to gain insight into how consumers use non-Bellabeat smart devices. She then wants you to select one Bellabeat product to apply these insights to in your presentation. The insights you discover will then help guide marketing strategy for the company. You will present your analysis to the Bellabeat executive team along with your high-level recommendations for Bellabeat’s marketing strategy.
+
+My goal is to look at datasets to find out:
+
+* How are customers using other fitness trackers, in their daily life?
+
+* What particular features seem to be the most heavily used?
+
+* What features do Bellabeat products already have that consumers want, and how do we focus marketing on those aspects?
 
 ## Ask Phase
 
