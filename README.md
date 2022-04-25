@@ -269,6 +269,75 @@ nrow(sql_check1)
 
 [1] 940
 
+From the above codes we can say that since the first six values of daily_activity and daily_calories are same and total observation of the sql query is 940 the values are the same between the dataframes.
+
+My gut says, daily_intensities and daily_activities will also intersect but I would not create bias and will confirm it.
+
+daily_activity3 <- daily_activity %>%
+  select(Id, ActivityDate, SedentaryMinutes, LightlyActiveMinutes, FairlyActiveMinutes, VeryActiveMinutes, SedentaryActiveDistance, LightActiveDistance, ModeratelyActiveDistance, VeryActiveDistance)
+
+head(daily_activity3)
+  
+|   Id        | ActivityDate    | SedentaryMinutes | LightlyActiveMinutes |
+| :---        | :---            | :---             | :----                |
+| 1503960366  |  4/12/2016      |      728         |         328          |
+| 1503960366  |  4/13/2016      |      776         |         217          |
+| 1503960366  |  4/14/2016      |      1218        |         181          |
+| 1503960366  |  4/15/2016      |       726        |         209          |         
+| 1503960366  |  4/16/2016      |       773        |         221          |
+| 1503960366  |  4/17/2016      |       539        |         164          |
+  
+FairlyActiveMinutes | VeryActiveMinutes | SedentaryActiveDistance |
+| :---              | :---              | :---                    |
+| 13                |             25    |                   0     |
+| 19                |             21    |                   0     |
+| 11                |             30    |                   0     |
+| 34                |             29    |                   0     |
+| 10                |             36    |                   0     |
+| 20                |             38    |                   0     |
+  
+| LightActiveDistance | ModeratelyActiveDistance | VeryActiveDistance |
+| :---                | :---                     | :---               |
+| 6.06                |     0.55                 |          1.88      |
+| 4.71                |     0.69                 |          1.57      |
+| 3.91                |     0.40                 |          2.44      |
+| 2.83                |     1.26                 |          2.14      |
+| 5.04                |     0.41                 |          2.71      |
+| 2.51                |     0.78                 |          3.19      |
+  
+sql_check2 <- sqldf('SELECT * FROM daily_activity3 INTERSECT SELECT * FROM daily_intensities')
+head(sql_check2)
+              
+|  Id         |  ActivityDate | SedentaryMinutes | LightlyActiveMinutes |
+| :---        | :---          | :---             | :----                |
+| 1503960366  |  4/12/2016    |          728     |             328      |
+| 1503960366  |  4/13/2016    |          776     |             217      |
+| 1503960366  |  4/14/2016    |         1218     |             181      |
+| 1503960366  |  4/15/2016    |          726     |             209      |
+| 1503960366  |  4/16/2016    |          773     |             221      |
+| 1503960366  |  4/17/2016    |          539     |             164      |
+              
+| FairlyActiveMinutes | VeryActiveMinutes | SedentaryActiveDistance |
+| :---                | :---              | :---                    |
+| 13                  |       25          |              0          |
+| 19                  |         21        |               0         |
+| 11                  |    30             |           0             |
+| 34                  |      29           |            0            |
+| 10                  |      36           |            0            |
+| 20                  |        38         |              0          |
+              
+| LightActiveDistance | ModeratelyActiveDistance | VeryActiveDistance |
+| :---                | :---                     | :---               |
+| 6.06                |     0.55              | 1.88                  |
+| 4.71                |     0.69              | 1.57                  |
+| 3.91                |     0.40              | 2.44                  |
+| 2.83                |     1.26              | 2.14                  |
+| 5.04                |     0.41              | 2.71                  |
+| 2.51                |     0.78              | 3.19                  |
+              
+
+  
+ 
 
   
   
