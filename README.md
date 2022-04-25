@@ -467,6 +467,91 @@ abline(0,0)
   
 ![caloriesburned](./Images/CaloriesBurned.png)
   
+plot the density of the residuals
+plot(density(calories.res))
+  
+![density](./Images/Density.png)
+  
+Checking for normality 
+  
+qqnorm(calories.res)
+qqline(calories.res)
+  
+![normalQQ](./Images/NormalQQ.png)
+  
+So it looks like the spread isn’t as far statistically as we thought.
+  
+## Strategy-3
+  
+By seeing linear relationship in the graphs we can market that in order to burn calories we do not need to do high-intensity work out, one just needs to walk.
+  
+### Relation between sleep and time in bed
+  
+ggplot(data=sleep_day, aes(x=TotalMinutesAsleep, y=TotalTimeInBed)) + geom_point()
+  
+![totaltimeinbed](./Images/Totaltimeinbed.png)
+  
+As we can see, there are some outliers, some people that spent a lot of time in bed, but didn’t actually sleep, and then a small batch that slept a whole bunch and spent time in bed
+  
+## Strategy-4
+  
+We could definitely market to consumers to monitor their time in bed against their sleep time.
+
+Since sleep time can be related to sedentary minutes I can merge these two data sets by the ID field to analyse further.
+  
+## Merge the datasets
+  
+combined_sleep_day_data <- merge(sleep_day, daily_activity, by="Id")
+head(combined_sleep_day_data)
+                           
+|  Id        |     SleepDay              |       TotalSleepRecords | TotalMinutesAsleep |
+| :---       | :---                      | :----                   | :----              |
+| 1503960366 |     4/12/2016 12:00:00 AM |                1        |        327         |
+| 1503960366 |     4/12/2016 12:00:00 AM |                1        |        327         |
+| 1503960366 |     4/12/2016 12:00:00 AM |                1        |        327         |
+| 1503960366 |     4/12/2016 12:00:00 AM |                1        |        327         |
+| 1503960366 |     4/12/2016 12:00:00 AM |                1        |        327         |
+| 1503960366 |     4/12/2016 12:00:00 AM |                1        |        327         |
+                           
+| TotalTimeInBed | ActivityDate | TotalSteps | TotalDistance | TrackerDistance |
+| :---           | :----        | :---       | :---          | :---            |
+| 346            | 5/7/2016     | 11992      |    7.71       |     7.71        |
+| 346            | 5/6/2016     | 12159      |    8.03       |     8.03        |
+| 346            | 5/1/2016     | 10602      |    6.81       |     6.81        |
+| 346            | 4/30/2016    |  14673     |     9.25      |      9.25       |
+| 346            | 4/12/2016    |  13162     |     8.50      |     8.50        |
+| 346            | 4/13/2016    |  10735     |     6.97      |      6.97       |
+                          
+| LoggedActivitiesDistance | VeryActiveDistance | ModeratelyActiveDistance |
+| :---                     | :---               | :---                     |
+|           0              |  2.46              |       2.12               |
+|           0              |  1.97              |       0.25               |
+|           0              |  2.29              |       1.60               |
+|           0              |  3.56              |       1.42               |
+|           0              |  1.88              |       0.55               |
+|           0              |  1.57              |       0.69               |
+                           
+| LightActiveDistance | SedentaryActiveDistance | VeryActiveMinutes |
+| :---                | :---                    | :---              |
+| 3.13                |       0                 |         37        |
+| 5.81                |       0                 |         24        |
+| 2.92                |       0                 |         33        |
+| 4.27                |       0                 |         52        |
+| 6.06                |       0                 |         25        |
+| 4.71                |       0                 |         21        |
+                           
+| FairlyActiveMinutes | LightlyActiveMinutes | SedentaryMinutes | Calories |
+| :---                | :---                 | :---             | :---     |
+|         46          |        175           |   833            |   1821   |
+|          6          |        289           |   754            |   1896   |
+|         35          |        246           |   730            |   1820   |
+|         34          |        217           |   712            |   1947   |
+|         13          |        328           |   728            |   1985   |
+|         19          |        217           |   776            |   1797   |
+                           
+
+
+  
  
 
 
