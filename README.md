@@ -608,7 +608,104 @@ head(combined_sleep_day_data2)
 |     13            |      328             |        728       |    1985  |
 |     19            |      217             |        776       |    1797  |
   
+n_distinct(combined_sleep_day_data2$Id)
+  
+[1] 33
+  
+Now we have all the 33 unique IDs
+  
+## Lets check Sedentary Time vs Time in Bed
+  
+For this first plot we’ll try it out with only the 24 unique IDs that have actually logged sleep data.
 
+Let’s run a correlation to see what the correlation coefficient coefficient would be for a linear regression:
+  
+sedentary.lm <- lm(SedentaryMinutes ~ TotalTimeInBed, data = combined_sleep_day_data)
+sedentary.lm
+                
+Call:
+lm(formula = SedentaryMinutes ~ TotalTimeInBed, data = combined_sleep_day_data)
+
+Coefficients:
+    (Intercept)  TotalTimeInBed  
+       921.9598         -0.2678
+                
+By seeing this i can say they are not highly related as time in bed goes up, sedentary minutes actually go down, but not to a significant value since it is approx -0.3.
+
+Lets check correlation between veryactiveminutes and calories
+                
+veryactive.lm <- lm(Calories ~ VeryActiveMinutes, data = combined_sleep_day_data)
+veryactive.lm
+  
+Call:
+lm(formula = Calories ~ VeryActiveMinutes, data = combined_sleep_day_data)
+  
+Coefficients:
+       (Intercept)  VeryActiveMinutes  
+           2004.36              13.55
+  
+ One can see they are highly co related, so lets plot a graph.
+  
+ ggplot(data = combined_sleep_day_data, aes(x=VeryActiveMinutes, y=Calories)) + geom_point() + stat_smooth(method = lm)
+ 
+ `geom_smooth()` using formula 'y ~ x'
+  
+ ![Veryaktivminuts](./Images/Veryaktivminuts.png)
+  
+Lets check correlation between total steps taken and calories
+  
+ggplot(data = combined_sleep_day_data, aes(x=TotalSteps, y=Calories)) + geom_point() +stat_smooth(method = lm)
+  
+`geom_smooth()` using formula 'y ~ x'
+  
+ ![combinedsleepday](./Images/combinedsleepday.png)
+  
+ lm(Calories ~ TotalSteps, data = combined_sleep_day_data)
+  
+ Call:
+lm(formula = Calories ~ TotalSteps, data = combined_sleep_day_data)
+ 
+ Coefficients:
+ (Intercept)   TotalSteps  
+   1.711e+03    7.616e-02
+  
+The value shows there is a very small correlation between total steps taken and calories burnt.
+
+Lets check correlation between fairlyactivemiutes taken and calories.
+  
+lm(Calories ~ FairlyActiveMinutes, data = combined_sleep_day_data)
+
+Call:
+lm(formula = Calories ~ FairlyActiveMinutes, data = combined_sleep_day_data)
+ 
+ Coefficients:
+         (Intercept)  FairlyActiveMinutes  
+             2211.85                 6.76
+  
+ ggplot(data = combined_sleep_day_data, aes(x=FairlyActiveMinutes, y=Calories)) + geom_point() + stat_smooth(method = lm)
+  
+`geom_smooth()` using formula 'y ~ x'`geom_smooth()` using formula 'y ~ x'
+  
+![fairlyactiveminutes](./Images/Fairlyactiveminutes.png)
+  
+We can see there is a Moderate relationship for fairly active minutes.
+  
+## Conclusion
+ 
+I prepossessed, explored, analysed and visualized the fitbit users dataset quite deeply, and gave some marketing strategy above.
+  
+## What makes Bellabeat stand-out?
+since in the scenario of the case study provided to me it was written Bellabeat collects hydration data because they had one product related to hydration check, they are better because fitbit did not have hydration data.
+  
+## Some importand analysis that Bellabeat can use:
+We can see that more people log their calories, steps taken, etc, and fewer users log their sleep data, and only a select few are logging their weight.
+  
+## Final marketing strategy:
+To market this, I initially thought that simply being active and taking steps would help with people on their journey start to burn calories. While this may be true, but the correlation between the two was small so after seeing the correlation maybe we shouldn’t market it that way.
+
+I would focus on the fact that simply collecting more data from different competitors one could see more trends.
+
+Also the best relationship was in between veryactiveminutes and calories so the people who are very active tend to burn the most calorie this can be a good marketing strategy.
   
   
  
