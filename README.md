@@ -274,6 +274,7 @@ From the above codes we can say that since the first six values of daily_activit
 My gut says, daily_intensities and daily_activities will also intersect but I would not create bias and will confirm it.
 
 daily_activity3 <- daily_activity %>%
+  
   select(Id, ActivityDate, SedentaryMinutes, LightlyActiveMinutes, FairlyActiveMinutes, VeryActiveMinutes, SedentaryActiveDistance, LightActiveDistance, ModeratelyActiveDistance, VeryActiveDistance)
 
 head(daily_activity3)
@@ -334,6 +335,60 @@ head(sql_check2)
 | 2.83                |     1.26              | 2.14                  |
 | 5.04                |     0.41              | 2.71                  |
 | 2.51                |     0.78              | 3.19                  |
+              
+nrow(sql_check2)
+              
+[1] 940
+              
+Seems like my gut was correct! but its always better to check, see and confirm with the data.
+
+This means I can carry out my analysis with just the 3 different data frames: * daily_activity * sleep_day * weight_log
+
+Since I have done my preparation and pre-processing. Now I will do the analysis
+            
+## The Analysis
+Since the number of observation in daily_activity is a lot more tha weight_log and sleep_day dataframes. There are chances there might be more id’s in the daily_activity dataframe. Lets confirm this.
+              
+n_distinct(daily_activity$Id)
+              
+[1] 33
+
+n_distinct(sleep_day$Id)
+              
+[1] 24
+              
+n_distinct(weight_log$Id)
+              
+[1] 8
+              
+Lets check once again the total number of observations in each dataframe
+              
+nrow(daily_activity)
+[1] 940
+
+nrow(sleep_day)
+[1] 413
+
+nrow(weight_log)
+[1] 67
+              
+Quick summary of all the dataframes: * daily_activity
+
+daily_activity %>%  
+  select(TotalSteps,
+         TotalDistance,
+         SedentaryMinutes,
+         VeryActiveMinutes) %>%
+  summary()
+  
+| TotalSteps    |   TotalDistance  |    SedentaryMinutes | VeryActiveMinutes |
+| :---          | :---             | :---                | :---              |   
+| Min.   :    0 |   Min.   : 0.000 |   Min.   :   0.0    |   Min.   :  0.00  | 
+| 1st Qu.: 3790 |  1st Qu.: 2.620  | 1st Qu.: 729.8   1st|   Qu.:  0.00      |
+| Median : 7406 |  Median : 5.245  |  Median :1057.5     | Median :  4.00    |
+| Mean   : 7638 |  Mean   : 5.490  | Mean   : 991.2      | Mean   : 21.16    |  
+| 3rd Qu.:10727 |  3rd Qu.: 7.713  | 3rd Qu.:1229.5      | 3rd Qu.: 32.00    |  
+| Max.   :36019 |  Max.   :28.030  | Max.   :1440.0      |  Max.   :210.00.  |
               
 
   
